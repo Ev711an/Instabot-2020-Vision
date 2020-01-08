@@ -5,6 +5,17 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
+/**Contributers:
+ * Evan Garrison
+ */
+
+/**
+ * Version 0.1.0 | January 8, 2020
+ * -Drivetrain Subsystem added
+ * -TeleopDrive Command added
+ * **THIS VERSION IS UNTESTED**
+ */
+
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
