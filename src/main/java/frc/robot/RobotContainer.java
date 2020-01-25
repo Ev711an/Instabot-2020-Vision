@@ -29,9 +29,11 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
   private final Drivetrain drivetrain = new Drivetrain(leftMotor1, leftMotor2, rightMotor1, rightMotor2);
+  private final ControlPanelSpindle spindle = new ControlPanelSpindle(spindleMotor);
 
   private final ExampleCommand m_autoCommand = new ExampleCommand(m_exampleSubsystem);
   private final TeleopDrive teleDrive = new TeleopDrive(drivetrain, controller1);
+  //private final SpinControlPanel spin = new SpinControlPanel(spindle, spindleSpeed);
 
   /**
    * The container for the robot.  Contains subsystems, OI devices, and commands.
@@ -49,6 +51,9 @@ public class RobotContainer {
    */
   private void configureButtonBindings() {
     drivetrain.setDefaultCommand(teleDrive);
+    JoystickButton A = new JoystickButton(controller1, 1);
+
+    A.whenHeld(new SpinControlPanel(spindle, spindleSpeed));
   }
 
 

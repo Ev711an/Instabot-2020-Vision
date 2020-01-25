@@ -20,11 +20,13 @@ public final class Constants {
     leftMotor1 = 0,
     leftMotor2 = 1,
     rightMotor1 = 2,
-    rightMotor2 = 3;
+    rightMotor2 = 3,
+    spindleMotor = 6;
 
     public static final int
     controllerPort1 = 0;
 
     public static final double
-    defaultSpeed = 0.5;
+    defaultSpeed = 0.5,
+    spindleSpeed = 0.5;
 }

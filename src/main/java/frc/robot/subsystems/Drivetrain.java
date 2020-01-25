@@ -7,12 +7,14 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
 
+  //fields
   private WPI_TalonSRX
   leftMotor1,
   leftMotor2,
@@ -38,6 +40,14 @@ public class Drivetrain extends SubsystemBase {
 
   public void stop() {
     setSpeed(0, 0);
+    brake();
+  }
+
+  public void brake() {
+    leftMotor1.setNeutralMode(NeutralMode.Brake);
+    leftMotor2.setNeutralMode(NeutralMode.Brake);
+    rightMotor1.setNeutralMode(NeutralMode.Brake);
+    rightMotor2.setNeutralMode(NeutralMode.Brake);
   }
 
   @Override
